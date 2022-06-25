@@ -1,14 +1,15 @@
 body {
-    margin: 0;
-    padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    
+    list-style: 1.6;
+    padding: 1em;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 button {
@@ -17,6 +18,7 @@ button {
     cursor: pointer;
     height: 50px;
     width: 15%;
+    margin: 1em 0;
 }
 
 input {
@@ -26,5 +28,14 @@ input {
     outline: #5f9341;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #5f9341;
+}
+
+li {
+    list-style: none;
 }
 
