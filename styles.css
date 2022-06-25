@@ -35,6 +35,11 @@ input {
     text-transform: uppercase;
 }
 
+#save-btn {
+    background-color: #47B5FF ;
+    text-transform: uppercase;
+}
+
 a {
     text-decoration: none;
     color: #5f9341;
