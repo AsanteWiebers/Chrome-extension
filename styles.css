@@ -30,6 +30,11 @@ input {
     padding-right: 15px;
 }
 
+#delete-btn {
+    background-color: red;
+    text-transform: uppercase;
+}
+
 a {
     text-decoration: none;
     color: #5f9341;
