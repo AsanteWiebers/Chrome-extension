@@ -5,24 +5,26 @@ const ulEl = document.getElementById("ul-el")
 const deleteEl = document.getElementById("delete-btn")
 const saveEl = document.getElementById("save-btn")
 
+if (leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage
+    render(myLeads) 
+}
 
-const tabs = [
-    { url: "https://www.linkedin.com/in/per-harald-borgen/"}
-]
 
 saveEl.addEventListener("click", function(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+            myLeads.push(tabs[0].url)
+            localStorage.setItem("myLeads", JSON.stringify(myLeads) ) // turning array into string
+            render(myLeads)
+        })
     
-    console.log(tabs[0].url)
 })
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads")) // parse turns string into an array
 
-if (leadsFromLocalStorage){
-    myLeads = leadsFromLocalStorage
-    renderLeads() 
-}
 
-// Refector the function so that it takes a parameter, leads, that it uses
+
+// Refactor the function so that it takes a parameter, leads, that it uses
 // instead of the global myLeads variable. Remember to update all invocations 
 // of the function as well.
 
